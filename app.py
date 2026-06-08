@@ -21,10 +21,10 @@ try:
     )
 
     cursor = db.cursor()
-    print("✅ Database Connected Successfully")
+    print("Database Connected Successfully")
 
 except Exception as e:
-    print("❌ Database Connection Error:", e)
+    print("Database Connection Error:", e)
 
 # ==========================
 # Home Page
