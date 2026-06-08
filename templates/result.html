@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #00b4d8, #0077b6);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .card {
+            background: white;
+            width: 500px;
+            padding: 40px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, .2);
+        }
+
+        .icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+
+        .safe {
+            color: #06d6a0;
+        }
+
+        .danger {
+            color: #ef476f;
+        }
+
+        h1 {
+            color: #023e8a;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            background: #00b4d8;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 10px;
+        }
+
+        .btn:hover {
+            background: #0077b6;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="card">
+
+        {% if status == "High Risk" %}
+
+        <div class="icon danger">
+            <i class="fa-solid fa-heart-circle-xmark"></i>
+        </div>
+
+        {% else %}
+
+        <div class="icon safe">
+            <i class="fa-solid fa-heart-circle-check"></i>
+        </div>
+
+        {% endif %}
+
+        <h1>Prediction Result</h1>
+
+        <h2>{{ prediction }}</h2>
+
+        <h3>{{ status }}</h3>
+
+        <a href="/" class="btn">
+            Check Another Patient
+        </a>
+
+    </div>
+
+</body>
+
+</html>
